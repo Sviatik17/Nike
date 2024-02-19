@@ -50,3 +50,21 @@ header {
     align-items: center;
     border-radius: 10px;
 }
+.notificationPopup{
+    width: 400px;
+    min-height: 100px;
+    background-color: rgba(79, 233, 105, 0.836);
+    color: #333;
+    border-radius: 20px;
+    position: fixed;
+    bottom: 30px;
+    left: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 24px;
+    font-weight: 700;
+    display: none;
+   
+}

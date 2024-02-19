@@ -31,8 +31,10 @@ app.post('/save-order', (req, res) => {
     content.push({
         list:data.list,
         name:data.name,
-        phone:data.phone
+        phone:data.phone,
+        time: data.time
     });
+    
 
     fs.writeFile('orders.txt',JSON.stringify(content),(err)=>{
         if(err){
@@ -41,6 +43,8 @@ app.post('/save-order', (req, res) => {
             console.log(`Замовлення збережено`)
         }
     })
+
+ 
 
 
  

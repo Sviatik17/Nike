@@ -1,3 +1,5 @@
+
+
 let db = [
     {
         id: 1,
@@ -53,13 +55,28 @@ function showCartInner(cartList) {
 
 
 $('#confirmBtn').click((e) => {
+    if(cartList.length>0){
     let data = {
         list: cartList,
         name: $('#username').val(),
         phone: $('#phone').val(),
+        time:Date.now()
     }
 
     axios.post('http://localhost:3000/save-order', data)
+    .then(res=>{
+        if(res.status==200){
+            showNotification('Дані збережено', 'rgba(72, 226, 141, 0.848)')
+            $('#username').val('');
+            $('#phone').val('');
+            showCartInner([]);
+
+
+        }
+    })
+}else{
+    showNotification('Товар не обрано', 'rgba(72, 226, 141, 0.848)')
+}
 })
 
 
@@ -77,3 +94,11 @@ function getOrders(){
     })
 }
 getOrders();
+
+function showNotification(text,color){
+    $('.notificationPopup').css('display','flex');
+    $('.notificationPopup').text(text);
+    $('.notificationPopup').css('background-color',color);
+    setTimeout(()=>{$('.notificationPopup').css('display','none')},3000)
+
+}
