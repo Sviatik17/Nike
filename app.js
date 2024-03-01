@@ -22,6 +22,25 @@ app.get('/getorders',(req,res)=>{
     res.json(content);
 })
 
+app.post('/delete-order',(req,res)=>{
+    const data =req.body;
+    let content=JSON.parse(fs.readFileSync('orders.txt','utf-8'));
+    let newDB=[]
+    for (let el of content){
+        if(el.time!=data.id){
+            newDB.push(el)
+        }
+    }
+    
+    fs.writeFile('orders.txt',JSON.stringify(newDB),(err)=>{
+        if(err){
+            console.log(err)
+        }else{
+            console.log(`Замовлення видалено`)
+            res.sendStatus(200)
+        }
+    })
+})
 
 app.post('/save-order', (req, res) => {
     const data = req.body;
@@ -43,11 +62,6 @@ app.post('/save-order', (req, res) => {
             console.log(`Замовлення збережено`)
         }
     })
-
- 
-
-
- 
 })
 
 

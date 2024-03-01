@@ -5,17 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="./style.css">
-
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.js' integrity='sha512-+k1pnlgt4F1H8L7t3z95o3/KO+o78INEcXTbnoJQ/F2VqDVhWoaiVml/OEHv9HsVgxUaVW+IbiZPUJQfF/YxZw==' crossorigin='anonymous'></script>
-
     <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic" rel="stylesheet" />
-
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.js' integrity='sha512-+k1pnlgt4F1H8L7t3z95o3/KO+o78INEcXTbnoJQ/F2VqDVhWoaiVml/OEHv9HsVgxUaVW+IbiZPUJQfF/YxZw==' crossorigin='anonymous'></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.7/axios.js' integrity='sha512-BK9PHgiHWfibD1gZHjigMVxh6wMAFhiGa8FV3mYdGIHO7QJWlP/Uy2kTw3ykOLd9OtSJyPSqPNKIRiSmAFw6UA==' crossorigin='anonymous'></script>
 
 
 </head>
 <body>
-
+ 
     <div class="notificationPopup">
         замовлення збережено
 
@@ -30,11 +27,44 @@
 
     <div class="wrap">
         <header>
-            <button>Menu</button>   
-            <div class="logo">Studio</div>
-            <button id="cart">Cart</button>
+            <div class="buttons">
+                <button class="menuBtn"><img class="buttonsImg" src="./img/menuIcon.png" alt=""> Menu</button>
+                <button class="searchBtn"><img class="buttonsImg" src="./img/Searchicon.png" alt=""> Search</button>
+            </div>
+             <img class="logo" src="./img/logo.png" alt="">
+            <nav>
+                <img src="./img/User.png" alt="">
+                <img src="./img/Heart.png" alt="">
+                <div class="cartGroup"><img id="cart" src="./img/Cart.png" alt=""> <div class="cartCounter"></div></div>
+            </nav>
+            <div class="selctGroup">
+              <div class="select">ENG <img src="./img/arrow.png" alt=""></div>
+              <div class="select">USD <img src="./img/arrow.png" alt=""></div>
+            </div>
+           
         </header>
-        <div class="productContainer"></div>
+        <main>
+            <div class="sliderArea">
+                <button class="sliderBtn" id="prevBtn"><img src="./img/prev-arrow.png" alt=""></button>
+                <div class="sliderContainer">
+                    <div class="left">
+                        <p class="sliderTitle">Are you ready to </p>
+                        <p class="sliderTitle2"> lead the way</p>
+                        <p >Luxury meets ultimate sitting comfort</p>
+                        <button class="discoverBtn">Discover <img src="./img/discover-arrow.png" alt=""></button>
+                    </div>
+                    <div class="right">
+                        <p class="rightText">Hot</p>
+                        <img src="./img/legs.png" alt="">
+                    </div>
+                   </div>
+                   <button class="sliderBtn" id="nextBtn"><img src="./img/next-arrow.png" alt=""></button>
+            </div>
+            <div class="cardArea">
+                <div class="productContainer"></div>
+            </div>
+        </main>
+      
     </div>
 
 
